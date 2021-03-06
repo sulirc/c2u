@@ -1,0 +1,23 @@
+{
+  "name": "c2u",
+  "version": "1.0.0",
+  "description": "Richard Feynman: \"What I cannot create, I do not understand\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sulirc/c2u.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sulirc/c2u/issues"
+  },
+  "homepage": "https://github.com/sulirc/c2u#readme",
+  "dependencies": {
+    "snabbdom": "^2.1.0"
+  }
+}
