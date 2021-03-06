@@ -19,5 +19,8 @@
   "homepage": "https://github.com/sulirc/c2u#readme",
   "dependencies": {
     "snabbdom": "^2.1.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
