@@ -9,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, "react/dist"),
     clean: true,
   },
+  devtool: 'eval-source-map',
   devServer: {
     contentBase: "./dist",
     open: true,
@@ -16,6 +17,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "(C2U) React",
+      template: "react/demo/index.html"
     }),
   ],
   module: {

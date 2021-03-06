@@ -1,20 +1,5 @@
-function doc(func) {
-
-  console.log("doc", func.descriptor.value);
-}
-
 class React {
-  @doc
-  static render(jsx, container) {
-    console.log("render", jsx, container);
-  }
-
-  constructor() {
-    console.log("react");
-  }
-
-  
-  init() {}
+  static render(jsx, container) {}
 }
 
 export default React;
