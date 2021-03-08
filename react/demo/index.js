@@ -1,6 +1,19 @@
-import React from '../src';
+import React, { h } from "../src";
 
-// console.log(React.isTestable);
+const clickFunc = () => {
+  console.log("click");
+};
+const vnode = h(
+  "div#container.two.classes", 
+  { 
+    on: {
+      click: clickFunc
+    }
+  }, 
+  [
+    h("span", { style: { fontWeight: "bold" } }, "This is bold"),
+    " and this is just normal text"
+  ]
+);
 
-React.render();
-
+React.render(vnode, document.getElementById("root"));
