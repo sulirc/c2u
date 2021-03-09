@@ -2,6 +2,12 @@
   "presets": ["@babel/preset-env"],
   "plugins": [
     [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "Snabbdom.createElement"
+      }
+    ],
+    [
       "@babel/plugin-proposal-decorators",
       {
         "decoratorsBeforeExport": true

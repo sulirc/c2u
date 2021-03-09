@@ -1,19 +1,9 @@
-import React, { h } from "../src";
+import React from "../src";
+import Snabbdom from 'snabbdom-pragma';
 
-const clickFunc = () => {
+const handleClick = () => {
   console.log("click");
 };
-const vnode = h(
-  "div#container.two.classes", 
-  { 
-    on: {
-      click: clickFunc
-    }
-  }, 
-  [
-    h("span", { style: { fontWeight: "bold" } }, "This is bold"),
-    " and this is just normal text"
-  ]
-);
+const jsx = <h1 id="container" on-click={ handleClick }>Hello world</h1>
 
-React.render(vnode, document.getElementById("root"));
+React.render(jsx, document.getElementById("root"));
