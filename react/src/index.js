@@ -1,9 +1,9 @@
+import Snabbdom from 'snabbdom-pragma';
 import { init } from "snabbdom/init";
 import { classModule } from "snabbdom/modules/class";
 import { propsModule } from "snabbdom/modules/props";
 import { styleModule } from "snabbdom/modules/style";
 import { eventListenersModule } from "snabbdom/modules/eventlisteners";
-import { h } from "snabbdom/h";
 
 const patch = init([
   // Init patch function with chosen modules
@@ -15,7 +15,7 @@ const patch = init([
 
 class React {
   static render(vnode, container) {
-    console.log("-> render", vnode, container);
+    console.log("render", vnode, container);
     patch(container, vnode);
   }
 }
@@ -31,4 +31,3 @@ function useEffect() {
 }
 
 export default React;
-export { h, patch };

@@ -1,5 +1,5 @@
-import React from "../src";
 import Snabbdom from 'snabbdom-pragma';
+import React from "../src";
 
 const handleClick = () => {
   console.log("click");
