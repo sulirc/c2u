@@ -31,3 +31,4 @@ function useEffect() {
 }
 
 export default React;
+export { Snabbdom };
