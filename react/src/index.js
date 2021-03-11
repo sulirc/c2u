@@ -1,4 +1,4 @@
-import Snabbdom from 'snabbdom-pragma';
+import Snabbdom from "snabbdom-pragma";
 import { init } from "snabbdom/init";
 import { classModule } from "snabbdom/modules/class";
 import { propsModule } from "snabbdom/modules/props";
@@ -22,13 +22,9 @@ class React {
 
 class ReactComponent {}
 
-function useState() {
+function useState() {}
 
-}
-
-function useEffect() {
-  
-}
+function useEffect() {}
 
 export default React;
 export { Snabbdom };
