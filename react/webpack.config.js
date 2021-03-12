@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "react/dist"),
     clean: true,
   },
-  devtool: 'eval-source-map',
+  devtool: "eval-source-map",
   devServer: {
     contentBase: "./dist",
     open: true,
@@ -17,7 +18,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "(C2U) React",
-      template: "react/demo/index.html"
+      template: "react/demo/index.html",
+    }),
+    new webpack.ProvidePlugin({
+      Snabbdom: "React",
     }),
   ],
   module: {
@@ -28,5 +32,10 @@ module.exports = {
         loader: "babel-loader",
       },
     ],
+  },
+  resolve: {
+    alias: {
+      React: "snabbdom-pragma",
+    },
   },
 };
