@@ -1,0 +1,23 @@
+.App {
+  margin: 10px;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #888;
+
+  .counter-wrapper {
+    display: inline-block;
+
+    .counter {
+      margin-left: 2px;
+      font-size: 2em;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+  .opt {
+    margin-right: 10px;
+    padding: 6px;
+    min-width: 64px;
+    vertical-align: text-bottom;
+  }
+}
