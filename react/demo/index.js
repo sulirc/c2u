@@ -1,8 +1,8 @@
-import ReactDOM from "../src/ReactDOM";
+import ReactDOM from '../src/ReactDOM';
 
 function App() {
   const handleClick = () => {
-    console.log("click");
+    console.log('click');
   };
 
   return (
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

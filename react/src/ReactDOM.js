@@ -1,5 +1,5 @@
-import patch from "./patch";
-import { toVNode } from "snabbdom/tovnode";
+import patch from './patch';
+import { toVNode } from 'snabbdom/tovnode';
 
 class ReactDOM {
   static render(jsx, container) {

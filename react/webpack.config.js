@@ -1,27 +1,27 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: "./react/demo/index.js",
+  mode: 'development',
+  entry: './react/demo/index.js',
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "react/dist"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'react/dist'),
     clean: true,
   },
-  devtool: "eval-source-map",
+  devtool: 'eval-source-map',
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist',
     open: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "(C2U) React",
-      template: "react/demo/index.html",
+      title: '(C2U) React',
+      template: 'react/demo/index.html',
     }),
     new webpack.ProvidePlugin({
-      Snabbdom: "React",
+      Snabbdom: 'React',
     }),
   ],
   module: {
@@ -29,13 +29,13 @@ module.exports = {
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
       },
     ],
   },
   resolve: {
     alias: {
-      React: "snabbdom-pragma",
+      React: 'snabbdom-pragma',
     },
   },
 };
