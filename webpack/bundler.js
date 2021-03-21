@@ -62,23 +62,29 @@ function createBundle(graph) {
 ],`;
   });
 
-  return `
-(function(modules) {
-  function require(id) {
-    const [fn, mapping] = modules[id];
+  const mainFactory = `
+  (function(modules) {
+    function require(id) {
+      const [fn, mapping] = modules[id];
 
-    function localRequire(relativePath) {
-      return require(mapping[relativePath]);
+      function localRequire(relativePath) {
+        return require(mapping[relativePath]);
+      }
+      
+      const module = { exports: {} };
+      fn(localRequire, module, module.exports);
+
+      return module.exports;
     }
-    
-    const module = { exports: {} };
-    fn(localRequire, module, module.exports);
 
-    return module.exports;
-  }
+    require(0);
+  })({${modules}})`;
 
-  require(0);
-})({${modules}})`;
+  const result = babel.transform(mainFactory, {
+    plugins: ['formatjs'],
+  });
+
+  return result.code;
 }
 
 const graph = createGraph('webpack/example/entry.js');
