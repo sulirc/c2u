@@ -38,10 +38,12 @@ function createGraph(entry) {
   for (const asset of queue) {
     const dirname = path.dirname(asset.filename);
 
+    asset.mapping = {};
     asset.dependencies.forEach((filename) => {
       const absoluteFilePath = path.join(dirname, filename);
       const newAsset = createAsset(absoluteFilePath);
 
+      asset.mapping[filename] = newAsset.id;
       queue.push(newAsset);
     });
   }
