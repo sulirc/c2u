@@ -63,6 +63,8 @@ function createBundle(graph) {
   });
 
   const mainFactory = `
+  /* eslint-disable */
+
   (function(modules) {
     function require(id) {
       const [fn, mapping] = modules[id];
@@ -87,7 +89,12 @@ function createBundle(graph) {
   return result.code;
 }
 
+function emit(filename, bundle) {
+  fs.writeFileSync(filename, bundle);
+}
+
 const graph = createGraph('webpack/example/entry.js');
 const bundle = createBundle(graph);
 
+emit('main.bundle.js', bundle);
 console.log(bundle);
