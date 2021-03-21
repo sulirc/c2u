@@ -93,8 +93,8 @@ function emit(filename, bundle) {
   fs.writeFileSync(filename, bundle);
 }
 
-const graph = createGraph('webpack/example/entry.js');
+const graph = createGraph(path.resolve(__dirname, 'example/entry.js'));
 const bundle = createBundle(graph);
 
-emit('main.bundle.js', bundle);
+emit(path.resolve(__dirname, 'main.bundle.js'), bundle);
 console.log(bundle);
