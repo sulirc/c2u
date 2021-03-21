@@ -50,6 +50,38 @@ function createGraph(entry) {
   return queue;
 }
 
-const graph = createGraph('webpack/example/entry.js');
+function createBundle(graph) {
+  let modules = '';
 
-console.log(graph);
+  graph.forEach((mod) => {
+    modules += `${mod.id}: [
+  function (require, module, exports) {
+    ${mod.code}
+  },
+  ${JSON.stringify(mod.mapping)}
+],`;
+  });
+
+  return `
+(function(modules) {
+  function require(id) {
+    const [fn, mapping] = modules[id];
+
+    function localRequire(relativePath) {
+      return require(mapping[relativePath]);
+    }
+    
+    const module = { exports: {} };
+    fn(localRequire, module, module.exports);
+
+    return module.exports;
+  }
+
+  require(0);
+})({${modules}})`;
+}
+
+const graph = createGraph('webpack/example/entry.js');
+const bundle = createBundle(graph);
+
+console.log(bundle);

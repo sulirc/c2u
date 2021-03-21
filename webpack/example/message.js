@@ -1,3 +1,1 @@
-const message = 'sulirc';
-
-export default message;
+export default 'sulirc';
