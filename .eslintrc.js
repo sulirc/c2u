@@ -15,5 +15,6 @@ module.exports = {
     'comma-dangle': 'off',
     'no-unused-vars': 'off',
     'space-before-function-paren': 'off',
+    'generator-star-spacing': 'off'
   },
 };

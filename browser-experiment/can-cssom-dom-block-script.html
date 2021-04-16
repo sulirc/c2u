@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script>
+      window.addEventListener('load', () => {
+        console.log('1', new Date());
+      });
+
+      window.addEventListener('DOMContentLoaded', () => {
+        console.log('2', new Date());
+      });
+
+      console.log('3', new Date());
+
+      let i = 0;
+      let max = 3e8;
+      while (i++ < max);
+
+      console.log('4', new Date());
+    </script> -->
+  </head>
+  <style>
+    p {
+      color: red;
+    }
+  </style>
+  <body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p id="last">5</p>
+
+    <script>
+      {
+        const p = document.getElementById('last');
+        console.log('check 1', getComputedStyle(p)['color']);
+      }
+    </script>
+
+    <style>
+      p {
+        color: blue;
+      }
+    </style>
+
+    <script>
+      {
+        const p = document.getElementById('last');
+        console.log('check 2', getComputedStyle(p)['color']);
+      }
+    </script>
+  </body>
+</html>
